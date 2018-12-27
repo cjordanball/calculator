@@ -1,6 +1,18 @@
 .container {
-  width: 500px;
-  height: 750px;
-  background-color: grey;
-  /* border: 2px solid #303030; */
+  width: 400px;
+  height: 650px;
+  background-color: #eee;
+  border: 2px solid #303030;
+  margin: 25px auto 0 auto;
+}
+.display {
+  display: inline-block;
+  height: 50px;
+  width: 90%;
+  margin-top: 20px;
+  background-color: #303030;
+  color: red;
+}
+body {
+  margin: 0 auto 0 auto;
 }

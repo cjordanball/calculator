@@ -8,10 +8,11 @@
 .display {
   display: inline-block;
   height: 50px;
-  width: 90%;
-  margin-top: 20px;
+  width: 100%;
+  margin-bottom: 20px;
   background-color: #303030;
   color: red;
+  text-align: right;
 }
 .numberButton {
   border: black solid 1px;
@@ -19,6 +20,11 @@
   height: 50px;
   width: 50px;
   display: inline-flex;
+  margin: 10px;
+}
+.zeroButton {
+  background-color: navy !important;
+  color: grey;
 }
 body {
   margin: 0 auto 0 auto;

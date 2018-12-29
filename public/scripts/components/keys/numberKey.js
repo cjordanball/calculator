@@ -3,11 +3,14 @@ const NumberKey = (num) => {
 	const numberSpan = document.createElement('span');
 
 	buttonDiv.classList.add('numberButton');
+	if (num === 0) {
+		buttonDiv.classList.add('zeroButton');
+	}
 	numberSpan.classList.add('numberText');
 	numberSpan.innerText = num;
 
 	buttonDiv.dataset.number = num;
-	buttonDiv.addEventHandler('click', () => {console.log('howdy: ', data-number)});
+	buttonDiv.id = `numberKey${num}`;
 	buttonDiv.appendChild(numberSpan);
 
 	return buttonDiv;

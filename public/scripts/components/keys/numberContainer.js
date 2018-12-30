@@ -4,8 +4,9 @@ import { mathData } from '../../services/mathService.js';
 
 const handleInput = (data) => {
 	if (!mathData.operator) {
-		mathData.operand1 += data;
-		console.log(mathData.operand1)
+		if (data) {
+			mathData.operand1 += data;
+		}
 	} else {
 		mathData.operand2 += data;
 	}
@@ -15,7 +16,7 @@ const handleInput = (data) => {
 
 const NumberContainer = () => {
 	const numberContainer = document.createElement('div');
-	numberContainer.classList.add('numberbox');
+	numberContainer.classList.add('numberBox');
 
 	for (let i = 0 ; i < 10; i++) {
 		const numKey = NumberKey(i);

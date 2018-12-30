@@ -5,6 +5,18 @@
   border: 2px solid #303030;
   margin: 25px auto 0 auto;
 }
+.numberBox {
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.functionBox {
+  background-color: gold;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .display {
   display: inline-block;
   height: 50px;
@@ -12,14 +24,23 @@
   margin-bottom: 20px;
   background-color: #303030;
   color: red;
+  font-size: 36px;
+  padding-top: 10px;
   text-align: right;
+  box-sizing: border-box;
 }
-.numberButton {
-  border: black solid 1px;
-  background-color: pink;
+.button {
+  border: black solid 2px;
   height: 50px;
   width: 50px;
-  display: inline-flex;
+  border-radius: 25px;
+  font-size: 24px;
+  padding-top: 12px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.numberButton {
+  background-color: pink;
   margin: 10px;
 }
 .zeroButton {
@@ -27,11 +48,7 @@
   color: grey;
 }
 .functionButton {
-  border: black solid 1px;
   background-color: navy;
-  height: 50px;
-  width: 50px;
-  display: inline-flex;
   margin: 10px;
   color: gold;
 }

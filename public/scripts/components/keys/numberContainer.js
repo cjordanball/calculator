@@ -3,13 +3,14 @@ import { mathData } from '../../services/mathService.js';
 
 
 const handleInput = (data) => {
-	if (data) {
+	if (!mathData.operator) {
 		mathData.operand1 += data;
+		console.log(mathData.operand1)
+	} else {
+		mathData.operand2 += data;
 	}
 	const display = document.querySelector('.display');
-	display.innerText = mathData.operand1
-
-
+	display.innerText = mathData.operator ? mathData.operand2 : mathData.operand1;
 }
 
 const NumberContainer = () => {
@@ -22,6 +23,6 @@ const NumberContainer = () => {
 	}
 	numberContainer.addEventListener('click', (e) => {handleInput(e.target.dataset.number)});
 	return numberContainer;
-}
+};
 
 export default NumberContainer;

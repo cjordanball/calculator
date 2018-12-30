@@ -26,6 +26,15 @@
   background-color: navy !important;
   color: grey;
 }
+.functionButton {
+  border: black solid 1px;
+  background-color: navy;
+  height: 50px;
+  width: 50px;
+  display: inline-flex;
+  margin: 10px;
+  color: gold;
+}
 body {
   margin: 0 auto 0 auto;
 }

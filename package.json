@@ -4,7 +4,7 @@
   "description": "Create a simple, four-function calculator",
   "main": "index.js",
   "scripts": {
-	"start": "lessc ./public/styles/less/styles.less ./public/styles/styles.css && http-server -p 4500",
+    "start": "lessc ./public/styles/less/styles.less ./public/styles/styles.css && http-server -p 4500",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/cjordanball/calculator#readme",
   "devDependencies": {
-    "eslint": "^5.10.0",
+    "eslint": "^5.11.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "http-server": "^0.11.1",
     "less": "^3.9.0",
     "nodemon": "^1.18.9"

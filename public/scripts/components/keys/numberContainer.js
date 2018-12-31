@@ -46,6 +46,7 @@ const NumberContainer = () => {
 			continue;
 		}
 	}
+	numberRow4.appendChild(NumberKey('.'));
 	numberContainer.appendChild(numberRow1);
 	numberContainer.appendChild(numberRow2);
 	numberContainer.appendChild(numberRow3);

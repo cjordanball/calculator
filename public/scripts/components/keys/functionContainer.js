@@ -4,7 +4,11 @@ import { mathData } from '../../services/mathService.js';
 
 const handleInput = (data) => {
 	const display = document.querySelector('.display');
-	if (mathData.operand1 && mathData.operand2 && data === '=') {
+	if (data === 'C') {
+		mathData[mathData.hotNumber] = mathData[mathData.hotNumber].slice(0, -1).length ? mathData[mathData.hotNumber].slice(0, -1) : '0';
+		display.innerText = mathData[mathData.hotNumber];
+	}
+	else if (mathData.operand1 && mathData.operand2 && data === '=') {
 		console.log('inIf');
 		let result;
 		switch(mathData.operator) {
@@ -37,7 +41,7 @@ const handleInput = (data) => {
 	// }
 }
 
-const functionKeys = ['+', '-', '*', '/', '='];
+const functionKeys = ['+', '-', '*', '/', '=', 'C'];
 
 const FunctionContainer = () => {
 	const functionContainer = document.createElement('div');

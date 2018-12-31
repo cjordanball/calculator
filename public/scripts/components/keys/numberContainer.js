@@ -11,8 +11,8 @@ const handleInput = (data) => {
 		mathData.operand2 += data;
 	}
 	const display = document.querySelector('.display');
-	display.innerText = mathData.operator ? mathData.operand2 : mathData.operand1;
-}
+	display.innerText = mathData.operator ? mathData.operand2 : parseFloat(mathData.operand1).toString();
+};
 
 const NumberContainer = () => {
 	const numberContainer = document.createElement('div');
@@ -30,7 +30,7 @@ const NumberContainer = () => {
 
 	numberContainer.classList.add('numberBox');
 
-	for (let i = 0 ; i < 10; i++) {
+	for (let i = 0; i < 10; i++) {
 		const numKey = NumberKey(i);
 		if (i === 0) {
 			numberRow4.appendChild(numKey);
@@ -50,7 +50,7 @@ const NumberContainer = () => {
 	numberContainer.appendChild(numberRow2);
 	numberContainer.appendChild(numberRow3);
 	numberContainer.appendChild(numberRow4);
-	numberContainer.addEventListener('click', (e) => {handleInput(e.target.dataset.number)});
+	numberContainer.addEventListener('click', (e) => { handleInput(e.target.dataset.number); });
 	return numberContainer;
 };
 

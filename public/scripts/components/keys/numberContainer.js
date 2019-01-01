@@ -5,6 +5,9 @@ import { mathData } from '../../services/mathService.js';
 const handleInput = (data) => {
 	if (!mathData.operator) {
 		if (data) {
+			if (data === '.' && mathData.operand1.includes('.')) {
+				return;
+			}
 			mathData.operand1 += data;
 		}
 	} else {

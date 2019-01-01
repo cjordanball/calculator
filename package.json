@@ -4,7 +4,7 @@
   "description": "Create a simple, four-function calculator",
   "main": "index.js",
   "scripts": {
-	"test": "jasmine-node --autotest --color ./public/scripts/copyServices",
+    "test": "jasmine-node --autotest --color ./public/scripts/copyServices",
     "start": "lessc ./public/styles/less/styles.less ./public/styles/styles.css && http-server -p 4500"
   },
   "repository": {
@@ -26,6 +26,6 @@
     "nodemon": "^1.18.9"
   },
   "dependencies": {
-    "jasmine-node": "^1.16.2"
+    "jasmine-node": "^2.0.1"
   }
 }

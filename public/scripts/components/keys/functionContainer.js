@@ -1,11 +1,15 @@
 import FunctionKey from './functionKey.js';
-import { mathData, clearApp } from '../../services/mathService.js';
+import { mathData, clearApp, negate } from '../../services/mathService.js';
 
 
 const handleInput = (data) => {
 	const display = document.querySelector('.display');
 	if (data === 'CA') {
 		clearApp();
+		return;
+	}
+	if (data === '+/-') {
+		negate();
 		return;
 	}
 	if (data === 'C') {
@@ -45,7 +49,7 @@ const handleInput = (data) => {
 	// }
 }
 
-const functionKeys = ['+', '-', '*', '/', '=', 'C', 'CA'];
+const functionKeys = ['+', '-', '*', '/', '=', 'C', 'CA', '+/-'];
 
 const FunctionContainer = () => {
 	const functionContainer = document.createElement('div');

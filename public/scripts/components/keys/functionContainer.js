@@ -1,5 +1,5 @@
 import FunctionKey from './functionKey.js';
-import { mathData, clearApp, negate } from '../../services/mathService.js';
+import { mathData, clearApp, negate, numberFormatter } from '../../services/mathService.js';
 
 
 const handleInput = (data) => {
@@ -37,7 +37,7 @@ const handleInput = (data) => {
 				result = 0;
 		}
 		console.log('result: ', result.toString());
-		display.innerText = result.toString();
+		display.innerText = numberFormatter(result.toString());
 	}
 	else if (mathData.operand1) {
 		mathData.operator = data;

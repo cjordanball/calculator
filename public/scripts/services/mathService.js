@@ -1,20 +1,30 @@
 const startState = Object.freeze({
-	operand1: '',
-	operand2: '',
+	operand1: '0',
+	operand2: '0',
 	operator: undefined,
 	hotNumber: 'operand1'
 });
 
 export const mathData = {
-	operand1: '',
-	operand2: '',
+	operand1: '0',
+	operand2: '0',
 	operator: undefined,
 	hotNumber: 'operand1'
 };
 
-export const NumberFormatter = (numString) => {
+export const numberFormatter = (numString) => {
 	let [integerPortion, decimalPortion] = numString.split(/\./);
-	return decimalPortion;
+	decimalPortion = parseInt(decimalPortion, 10) ? decimalPortion : '';
+	integerPortion = parseInt(integerPortion, 10).toString();
+	const intPortionArr = integerPortion.split('');
+	const leng = intPortionArr.length;
+	for (let i = 1; i < leng - 1; i++) {
+		if ((leng - i) % 3 === 0) {
+			intPortionArr[i] = `,${intPortionArr[i]}`;
+		}
+	}
+	integerPortion = intPortionArr.join('');
+	return decimalPortion ? `${integerPortion}.${decimalPortion}` : `${integerPortion}`;
 };
 
 export const clearApp = () => {

@@ -1,5 +1,5 @@
 import NumberKey from './numberKey.js';
-import { mathData } from '../../services/mathService.js';
+import { mathData, numberFormatter } from '../../services/mathService.js';
 
 
 const handleInput = (data) => {
@@ -14,7 +14,7 @@ const handleInput = (data) => {
 		mathData.operand2 += data;
 	}
 	const display = document.querySelector('.display');
-	display.innerText = mathData.operator ? mathData.operand2 : parseFloat(mathData.operand1).toString();
+	display.innerText = numberFormatter(mathData.operator ? mathData.operand2 : parseFloat(mathData.operand1).toString());
 };
 
 const NumberContainer = () => {

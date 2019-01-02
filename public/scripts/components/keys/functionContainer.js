@@ -22,6 +22,7 @@ const handleInput = (data) => {
 		switch(mathData.operator) {
 			case '+':
 				result = parseFloat(mathData.operand1) + parseFloat(mathData.operand2);
+
 				console.log('inplus: ', result);
 				break;
 			case '-':
@@ -42,6 +43,7 @@ const handleInput = (data) => {
 	else if (mathData.operand1) {
 		mathData.operator = data;
 		display.innerText = data;
+		mathData.hotNumber = 'operand2';
 	}
 
 	// ['+', '-', '*', '/'].includes(data) && mathData.operand1 {

@@ -3,18 +3,17 @@ import { mathData, numberFormatter } from '../../services/mathService.js';
 
 
 const handleInput = (data) => {
-	if (!mathData.operator) {
-		if (data) {
-			if (data === '.' && mathData.operand1.includes('.')) {
-				return;
-			}
-			mathData.operand1 += data;
+	if (/\d/.test(data)) {
+		mathData[mathData.hotNumber] += data;
+	} else if (/\./.test(data)) {
+		if (mathData[mathData.hotNumber].includes('.')) {
+			return;
 		}
-	} else {
-		mathData.operand2 += data;
+		mathData[mathData.hotNumber] += data;
 	}
+
 	const display = document.querySelector('.display');
-	display.innerText = numberFormatter(mathData.operator ? mathData.operand2 : parseFloat(mathData.operand1).toString());
+	display.innerText = numberFormatter(mathData[mathData.hotNumber]);
 };
 
 const NumberContainer = () => {

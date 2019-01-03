@@ -4,19 +4,8 @@ import { mathData, clearApp, negate, numberFormatter } from '../../services/math
 
 const handleInput = (data) => {
 	const display = document.querySelector('.display');
-	if (data === 'CA') {
-		clearApp();
-		return;
-	}
-	if (data === '+/-') {
-		negate();
-		return;
-	}
-	if (data === 'C') {
-		mathData[mathData.hotNumber] = mathData[mathData.hotNumber].slice(0, -1).length ? mathData[mathData.hotNumber].slice(0, -1) : '0';
-		display.innerText = mathData[mathData.hotNumber];
-	}
-	else if (mathData.operand1 && mathData.operand2 && data === '=') {
+
+	if (mathData.operand1 && mathData.operand2 && data === '=') {
 		console.log('inIf');
 		let result;
 		switch(mathData.operator) {
@@ -31,7 +20,8 @@ const handleInput = (data) => {
 			case '*':
 				result = parseFloat(mathData.operand1) * parseFloat(mathData.operand2);
 				break;
-			case '/':
+			case '÷':
+			console.log('div');
 				result = parseFloat(mathData.operand1) / parseFloat(mathData.operand2);
 				break;
 			default:
@@ -45,17 +35,13 @@ const handleInput = (data) => {
 		display.innerText = data;
 		mathData.hotNumber = 'operand2';
 	}
-
-	// ['+', '-', '*', '/'].includes(data) && mathData.operand1 {
-	// 	console.log(data)
-	// }
 }
 
-const functionKeys = ['+', '-', '*', '/', '=', 'C', 'CA', '+/-'];
+const functionKeys = ['+', '-', '*', '÷'];
 
-const FunctionContainer = () => {
+const OperatorsContainer = () => {
 	const functionContainer = document.createElement('div');
-	functionContainer.classList.add('functionBox');
+	functionContainer.classList.add('operatorsBox');
 
 	functionKeys.forEach((func) => {
 		const functionKey = FunctionKey(func);
@@ -65,4 +51,4 @@ const FunctionContainer = () => {
 	return functionContainer;
 };
 
-export default FunctionContainer;
+export default OperatorsContainer;

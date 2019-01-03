@@ -1,6 +1,7 @@
 import Display from './components/Display.js';
 import NumberContainer from './components/keys/numberContainer.js';
-import FunctionContainer from './components/keys/functionContainer.js'
+import OperatorsContainer from './components/keys/operatorsContainer.js';
+import MiscKeysContainer from './components/keys/miscKeysContainer.js';
 
 
 const body = document.querySelector('body');
@@ -11,4 +12,5 @@ container.classList.add('container');
 body.appendChild(container);
 container.appendChild(Display());
 container.appendChild(NumberContainer());
-container.appendChild(FunctionContainer());
+container.appendChild(OperatorsContainer());
+container.appendChild(MiscKeysContainer());

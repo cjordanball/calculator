@@ -12,11 +12,13 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-.functionBox {
+.operatorsBox,
+.miscKeysBox {
+  width: 100%;
   background-color: gold;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .numberRow {
   width: 100%;
@@ -38,7 +40,6 @@
 }
 .button {
   border: black solid 2px;
-  height: 50px;
   width: 33.33%;
   font-size: 24px;
   padding-top: 12px;
@@ -46,6 +47,7 @@
   text-align: center;
 }
 .numberButton {
+  height: 100px;
   background-color: pink;
   margin: 10px;
 }
@@ -54,6 +56,8 @@
   color: grey;
 }
 .functionButton {
+  height: 50px;
+  width: 25%;
   background-color: navy;
   margin: 10px;
   color: gold;

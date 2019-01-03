@@ -1,5 +1,5 @@
 import FunctionKey from './functionKey.js';
-import { mathData, clearApp, negate, numberFormatter } from '../../services/mathService.js';
+import { mathData, clearApp, clearAppKeepDisplay, negate, numberFormatter } from '../../services/mathService.js';
 
 const handleInput = (data) => {
 	const display = document.querySelector('.display');
@@ -35,8 +35,9 @@ const handleInput = (data) => {
 			default:
 				result = 0;
 		}
-		console.log('result: ', result.toString());
 		display.innerText = numberFormatter(result.toString());
+		clearAppKeepDisplay();
+
 	}
 }
 

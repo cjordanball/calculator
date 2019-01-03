@@ -30,6 +30,7 @@ export const numberFormatter = (numString) => {
 			integerPortionArr[i] = `,${integerPortionArr[i]}`;
 		}
 	}
+	if ()
 	integerPortion = neg ? neg.concat(integerPortionArr.join('')) : integerPortionArr.join('');
 	return decimalPortion ? `${integerPortion}.${decimalPortion}` : `${integerPortion}`;
 };
@@ -39,6 +40,10 @@ export const clearApp = () => {
 	const display = document.querySelector('.display');
 	display.innerText = '0';
 };
+
+export const clearAppKeepDisplay = () => {
+	Object.assign(mathData, startState);
+}
 
 export const negate = () => {
 	mathData[mathData.hotNumber] = (parseInt(mathData[mathData.hotNumber], 10) * -1).toString();

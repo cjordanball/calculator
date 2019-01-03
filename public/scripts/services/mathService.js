@@ -13,24 +13,24 @@ export const mathData = {
 };
 
 export const numberFormatter = (numString) => {
+	let neg;
 	let [integerPortion, decimalPortion] = numString.split(/\./);
-	if (integerPortion[0] === '0') {
-		integerPortion = integerPortion.slice(1);
+	let integerPortionArr = integerPortion.split('');
+	if (integerPortionArr[0] === '-') {
+		neg =  integerPortionArr.shift();
+	};
+	if (integerPortionArr[0] === '0') {
+		integerPortionArr = integerPortionArr.slice(1);
 	}
-	console.log('numString: ', integerPortion);
-	const neg = integerPortion[0] === '-';
 	decimalPortion = parseInt(decimalPortion, 10) ? decimalPortion : '';
-	integerPortion = parseInt(integerPortion, 10).toString();
-	const intPortionArr = integerPortion.split('');
-	const leng = intPortionArr.length;
-	const offSet = 0
-	console.log('off: ', offSet)
+	// integerPortion = parseInt(integerPortion, 10).toString();
+	const leng = integerPortionArr.length;
 	for (let i = 1; i < leng - 1; i++) {
-		if ((leng - i) % 3 === offSet) {
-			intPortionArr[i] = `,${intPortionArr[i]}`;
+		if ((leng - i) % 3 === 0) {
+			integerPortionArr[i] = `,${integerPortionArr[i]}`;
 		}
 	}
-	integerPortion = intPortionArr.join('');
+	integerPortion = neg ? neg.concat(integerPortionArr.join('')) : integerPortionArr.join('');
 	return decimalPortion ? `${integerPortion}.${decimalPortion}` : `${integerPortion}`;
 };
 

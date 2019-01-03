@@ -7,7 +7,7 @@
   border-radius: 10px;
 }
 .numberBox {
-  background-color: chocolate;
+  background-color: #ccc;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -15,10 +15,15 @@
 .operatorsBox,
 .miscKeysBox {
   width: 100%;
-  background-color: gold;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+}
+.operatorsBox {
+  background-color: #ccc;
+}
+.miscKeysBox {
+  background-color: #999;
 }
 .numberRow {
   width: 100%;
@@ -40,6 +45,7 @@
 }
 .button {
   border: black solid 2px;
+  border-radius: 5px;
   width: 33.33%;
   font-size: 24px;
   padding-top: 12px;

@@ -13,7 +13,7 @@ const handleInput = (data) => {
 	}
 	if (data === '<=') {
 		mathData[mathData.hotNumber] = mathData[mathData.hotNumber].slice(0, -1).length ? mathData[mathData.hotNumber].slice(0, -1) : '0';
-		display.innerText = mathData[mathData.hotNumber];
+		display.innerText = numberFormatter(mathData[mathData.hotNumber],10);
 	}
 	else if (mathData.operand1 && mathData.operand2 && data === '=') {
 		let result;

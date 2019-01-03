@@ -14,12 +14,19 @@ export const mathData = {
 
 export const numberFormatter = (numString) => {
 	let [integerPortion, decimalPortion] = numString.split(/\./);
+	if (integerPortion[0] === '0') {
+		integerPortion = integerPortion.slice(1);
+	}
+	console.log('numString: ', integerPortion);
+	const neg = integerPortion[0] === '-';
 	decimalPortion = parseInt(decimalPortion, 10) ? decimalPortion : '';
 	integerPortion = parseInt(integerPortion, 10).toString();
 	const intPortionArr = integerPortion.split('');
 	const leng = intPortionArr.length;
+	const offSet = 0
+	console.log('off: ', offSet)
 	for (let i = 1; i < leng - 1; i++) {
-		if ((leng - i) % 3 === 0) {
+		if ((leng - i) % 3 === offSet) {
 			intPortionArr[i] = `,${intPortionArr[i]}`;
 		}
 	}
@@ -36,5 +43,5 @@ export const clearApp = () => {
 export const negate = () => {
 	mathData[mathData.hotNumber] = (parseInt(mathData[mathData.hotNumber], 10) * -1).toString();
 	const display = document.querySelector('.display');
-	display.innerText = mathData[mathData.hotNumber];
+	display.innerText = numberFormatter(mathData[mathData.hotNumber]);
 };

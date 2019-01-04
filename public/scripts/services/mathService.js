@@ -12,27 +12,36 @@ export const mathData = {
 	hotNumber: 'operand1'
 };
 
-export const numberFormatter = (numString) => {
+const handleIntPortion = (intPortion) => {
 	let neg;
-	let [integerPortion, decimalPortion] = numString.split(/\./);
-	let integerPortionArr = integerPortion.split('');
-	if (integerPortionArr[0] === '-') {
-		neg =  integerPortionArr.shift();
-	};
-	if (integerPortionArr[0] === '0') {
-		integerPortionArr = integerPortionArr.slice(1);
+	if (!intPortion) {
+		return '0';
 	}
-	decimalPortion = parseInt(decimalPortion, 10) ? decimalPortion : '';
-	// integerPortion = parseInt(integerPortion, 10).toString();
-	const leng = integerPortionArr.length;
+	const trimmedIntPortion = parseInt(intPortion, 10).toString();
+	let intPortionArr = trimmedIntPortion.split('');
+	if (intPortionArr[0] === '-') {
+		neg =  intPortionArr.shift();
+	};
+	const leng = intPortionArr.length;
 	for (let i = 1; i < leng - 1; i++) {
 		if ((leng - i) % 3 === 0) {
-			integerPortionArr[i] = `,${integerPortionArr[i]}`;
+			intPortionArr[i] = `,${intPortionArr[i]}`;
 		}
 	}
-	if ()
-	integerPortion = neg ? neg.concat(integerPortionArr.join('')) : integerPortionArr.join('');
-	return decimalPortion ? `${integerPortion}.${decimalPortion}` : `${integerPortion}`;
+	return neg ? neg.concat(intPortionArr.join('')) : intPortionArr.join('');
+}
+export const numberFormatter = (numString) => {
+	let intPortion;
+	const dotted = numString.includes('.');
+	if (!dotted) {
+		return handleIntPortion(numString);
+	}
+	let [integerPortion, decimalPortion] = numString.split(/\./);
+
+	decimalPortion = parseInt(decimalPortion, 10) ? decimalPortion : '';
+	intPortion = handleIntPortion(integerPortion);
+
+	return decimalPortion ? `${intPortion}.${decimalPortion}` : `${intPortion}.`;
 };
 
 export const clearApp = () => {

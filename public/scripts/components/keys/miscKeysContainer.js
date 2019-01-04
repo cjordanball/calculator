@@ -20,8 +20,6 @@ const handleInput = (data) => {
 		switch(mathData.operator) {
 			case '+':
 				result = parseFloat(mathData.operand1) + parseFloat(mathData.operand2);
-
-				console.log('inplus: ', result);
 				break;
 			case '-':
 				result = parseFloat(mathData.operand1) - parseFloat(mathData.operand2);
